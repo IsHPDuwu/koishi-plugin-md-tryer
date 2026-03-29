@@ -65,7 +65,7 @@ export function apply(ctx: Context, config: Config) {
       
     })
 
-    ctx.command('echo-md-passage', '进入文稿态并将下一条消息以原生 Markdown 回显')
+  ctx.command('echo-md-passage', '进入文稿态并将下一条消息以原生 Markdown 回显')
     .action(async ({ session }) => {
       if (session.platform !== 'qq') {
         return '此指令仅支持 QQ 平台的原生 Markdown。'

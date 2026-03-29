@@ -105,6 +105,20 @@ const user: User = { name: "Alice", age: 25 };
 > print("Hello")
 > \`\`\``
 
+const example10 = `# 单图示例（Nacho）
+这是一张 Nacho 表情包：
+
+![Nacho](https://i0.hdslb.com/bfs/article/9dead37836d2422f8fbdfff3e2b6580e7c87f23e.png@!web-article-pic.avif)`
+
+const example11 = `# 多图示例（Nacho）
+这里有多张 Nacho 表情包：
+
+![Nacho 1](https://i0.hdslb.com/bfs/article/b7aa507f3a71c21c40105e62270a0618887d948b.png@!web-article-pic.avif)
+
+![Nacho 2](https://i0.hdslb.com/bfs/article/fe93ed43363fe4c2a07cd8aca1f8276e188cc2b4.png@!web-article-pic.avif)
+
+![Nacho 3](https://i0.hdslb.com/bfs/article/2bf00bbab8419a235e45db3d94b04353e296ca58.png@!web-article-pic.avif)`
+
 export const examples: string[] = [
   example0,
   example1,
@@ -115,5 +129,7 @@ export const examples: string[] = [
   example6,
   example7,
   example8,
-  example9
+  example9,
+  example10,
+  example11,
 ]

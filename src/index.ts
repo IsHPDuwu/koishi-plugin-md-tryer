@@ -11,6 +11,25 @@ export const Config: Schema<Config> = Schema.object({
   verboseConsoleInfo: Schema.boolean().default(false).description('是否开启调试模式，在console发送更多信息，比如打印 发送的 Markdown 内容')
 })
 
+async function sendMarkdown(session, content: string) {
+  if (session.platform !== 'qq') {
+    return '此指令仅支持 QQ 平台的原生 Markdown。'
+  }
+
+  try {
+    await session.bot.internal.sendMessage(session.channelId, {
+      msg_id: session.messageId,
+      msg_type: 2,
+      markdown: {
+        content,
+      },
+    })
+  } catch (e) {
+    session.app.logger('echo-md').error('发送失败:', e)
+    return `发送失败，请确认是否已开通原生 MD 权限。错误信息: ${e.message}`
+  }
+}
+
 export function apply(ctx: Context, config: Config) {
   ctx.command('echo-md <text:text>', '以原生 Markdown 形式回显内容')
     .option('example', '-e, --example <index:number> 发送预置的 Markdown 示例 (0-9)')
@@ -26,6 +45,10 @@ export function apply(ctx: Context, config: Config) {
         return '请输入内容或使用 --example 选项'
       }
 
+      if (session.platform !== 'qq') {
+        return '此指令仅支持 QQ 平台的原生 Markdown。'
+      }
+
       if (options.raw) {
         if (config.verboseConsoleInfo) {
           ctx.logger.info('[RAW模式] 发送内容:', text)
@@ -34,25 +57,25 @@ export function apply(ctx: Context, config: Config) {
         return
       }
 
-      if (session.platform !== 'qq') {
-        return '此指令仅支持 QQ 平台的原生 Markdown。'
-      }
-
       if (config.verboseConsoleInfo) {
         ctx.logger.info('[Markdown模式] 发送内容:', text)
       }
 
-      try {
-        await session.bot.internal.sendMessage(session.channelId, {
-            msg_id: session.messageId,
-            msg_type: 2,
-            markdown: {
-              content: text 
-            }
-          })
-      } catch (e) {
-        ctx.logger('echo-md').error('发送失败:', e)
-        return `发送失败，请确认是否已开通原生 MD 权限。错误信息: ${e.message}`
+      return sendMarkdown(session, text)
+      
+    })
+
+    ctx.command('echo-md-passage', '进入文稿态并将下一条消息以原生 Markdown 回显')
+    .action(async ({ session }) => {
+      if (session.platform !== 'qq') {
+        return '此指令仅支持 QQ 平台的原生 Markdown。'
       }
+
+      session.send('请发送下一条消息作为 Markdown 文稿内容。')
+
+      const next = await session.prompt()
+      if (!next) return '未获取到文稿内容。'
+
+      return sendMarkdown(session, next)
     })
 }

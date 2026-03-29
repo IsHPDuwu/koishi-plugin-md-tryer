@@ -1,11 +1,10 @@
-export const examples: string[] = [
-  `# 标题示例
+const example0 = `# 标题示例
 # 一级标题
 ## 二级标题
 ### 三级标题
-**粗体** 和 *斜体* 文本`,
-  
-  `# 列表示例
+**粗体** 和 *斜体* 文本`
+
+const example1 = `# 列表示例
 ## 无序列表
 - 项目一
 - 项目二
@@ -15,18 +14,18 @@ export const examples: string[] = [
 ## 有序列表
 1. 第一项
 2. 第二项
-3. 第三项`,
+3. 第三项`
 
-  `# 文本格式示例
+const example2 = `# 文本格式示例
 **粗体文本**
 *斜体文本*
 ***粗斜体文本***
 
 ~~删除线文本~~
 
-行内代码：\`console.log("Hello")\``,
+行内代码：\`console.log("Hello")\``
 
-  `# 代码示例
+const example3 = `# 代码示例
 行内代码：\`console.log("Hello")\`
 
 \`\`\`javascript
@@ -34,23 +33,23 @@ function hello() {
   console.log("Hello, World!");
 }
 hello();
-\`\`\``,
-  
-  `# 引用示例
+\`\`\``
+
+const example4 = `# 引用示例
 > 这是一段引用
 >> 嵌套引用
 >>> 三级嵌套
 
-> 引用中可以包含**粗体**和*斜体*`,
+> 引用中可以包含**粗体**和*斜体*`
 
-  `# 表格示例
+const example5 = `# 表格示例
 | 姓名 | 年龄 | 职业 |
 |------|------|------|
 | 张三 | 25   | 工程师 |
 | 李四 | 30   | 设计师 |
-| 王五 | 28   | 产品经理 |`,
+| 王五 | 28   | 产品经理 |`
 
-  `# 分割线和强调示例
+const example6 = `# 分割线和强调示例
 ---
 
 **粗体文本**
@@ -59,9 +58,9 @@ hello();
 
 ---
 
-~~删除线文本~~`,
+~~删除线文本~~`
 
-  `# 任务列表示例
+const example7 = `# 任务列表示例
 - [x] 已完成的任务
 - [ ] 未完成的任务
 - [ ] 另一个待办事项
@@ -69,9 +68,9 @@ hello();
 ## 任务详情
 - [x] 学习 Markdown
 - [ ] 实践使用
-- [ ] 分享给他人`,
+- [ ] 分享给他人`
 
-  `# 混合格式示例
+const example8 = `# 混合格式示例
 ## 介绍
 这是一个**综合示例**，展示了多种格式的组合。
 
@@ -84,9 +83,9 @@ def greet(name):
 ### 列表
 - 特点一：简单易学
 - 特点二：格式清晰
-- 特点三：广泛支持`,
+- 特点三：广泛支持`
 
-  `# 高级示例
+const example9 = `# 高级示例
 ## 数学公式
 行内公式：E = mc²
 
@@ -105,4 +104,16 @@ const user: User = { name: "Alice", age: 25 };
 > \`\`\`
 > print("Hello")
 > \`\`\``
+
+export const examples: string[] = [
+  example0,
+  example1,
+  example2,
+  example3,
+  example4,
+  example5,
+  example6,
+  example7,
+  example8,
+  example9
 ]

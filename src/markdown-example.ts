@@ -108,7 +108,11 @@ const user: User = { name: "Alice", age: 25 };
 const example10 = `# 单图示例（mihoyo）
 > 原神？启动！！
 
-![#100px #100px](https://bkimg.cdn.bcebos.com/pic/d043ad4bd11373f08202441b13595cfbfbedaa64aea3?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536)`
+![#100px #100px](https://bkimg.cdn.bcebos.com/pic/d043ad4bd11373f08202441b13595cfbfbedaa64aea3?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536)
+
+--- 
+图片url: \`https://bkimg.cdn.bcebos.com/pic/d043ad4bd11373f08202441b13595cfbfbedaa64aea3?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536\`
+`
 
 const example11 = `# 🔍 百度搜索示例
 

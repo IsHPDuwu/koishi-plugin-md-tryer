@@ -1,5 +1,9 @@
 # koishi-plugin-md-tryer
 
+[![npm](https://img.shields.io/npm/v/koishi-plugin-md-tryer?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-md-tryer)
+[![npm-download](https://img.shields.io/npm/dm/koishi-plugin-md-tryer?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-md-tryer)
+[![Koishi Forum](https://img.shields.io/badge/koishi.forum.xyz-5546A3?style=for-the-badge&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff3%2FKoishi.js_Logo.png&logoColor=white)](https://forum.koishi.xyz/t/topic/12120)
+
 用于测试和调试 QQ 平台原生 Markdown 消息的 Koishi 插件。
 
 ## 功能特性
@@ -110,6 +114,31 @@ echo-md -e 2 --raw
 ### 示例 9 - 高级示例
 
 ![示例 9](doc/images/9.png)
+
+### 示例 10 - 单图示例（mihoyo）
+
+![示例 10](doc/images/10.png)
+
+### 示例 11 - 百度搜索示例
+
+![示例 11](doc/images/11.png)
+
+### 示例 12 - Google 搜索示例
+
+![示例 12](doc/images/12.png)
+
+### 示例 13 - Bilibili 哔哩哔哩示例
+
+![示例 13](doc/images/13.png)
+
+### 示例 14 - YouTube 示例
+
+![示例 14.a](doc/images/14.a.png)
+![示例 14.b](doc/images/14.b.png)
+
+### 示例 15 - 原神：提瓦特大陆的冒险
+
+![示例 15](doc/images/15.png)
 
 ## 核心代码段
 

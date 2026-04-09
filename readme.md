@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/koishi-plugin-md-tryer?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-md-tryer)
 [![npm-download](https://img.shields.io/npm/dm/koishi-plugin-md-tryer?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-md-tryer)
-[![Koishi Forum](https://img.shields.io/badge/koishi.forum.xyz-5546A3?style=for-the-badge&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff3%2FKoishi.js_Logo.png&logoColor=white)](https://forum.koishi.xyz/t/topic/12120)
+[![Koishi Forum](https://img.shields.io/badge/koishi.forum.xyz-5546A3?style=for-the-badge&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff3%2FKoishi.js_Logo.png&logoColor=white)](https://forum.koishi.xyz/t/topic/12432)
 
 用于测试和调试 QQ 平台原生 Markdown 消息的 Koishi 插件。
 

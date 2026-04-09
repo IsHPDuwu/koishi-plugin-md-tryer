@@ -111,10 +111,29 @@ echo-md -e 2 --raw
 
 ![示例 9](doc/images/9.png)
 
+## 核心代码段
+
+本插件的核心是通过调用 QQ Bot API 的原生 Markdown 接口来发送消息：
+
+```typescript
+await session.bot.internal.sendMessage(session.channelId, {
+  msg_id: session.messageId,
+  msg_type: 2,
+  markdown: {
+    content,
+  },
+})
+```
+
+关键参数说明：
+- `msg_type: 2` - 指定消息类型为 Markdown
+- `markdown.content` - Markdown 格式的文本内容
+- `msg_id` - 关联的消息ID，用于引用回复
+
 ## 源码
 
-- [查看示例源码](src/markdown-example.ts)
-- [GitHub 仓库](https://github.com/IsHPDuwu/koishi-plugin-md-tryer)
+- [查看示例markdown源码](src/markdown-example.ts)
+- [上游GitHub仓库](https://github.com/IsHPDuwu/koishi-plugin-md-tryer)
 
 ## 注意事项
 
@@ -147,5 +166,50 @@ QQ 平台会对发送的内容进行审查，包含不合规内容的消息会�
 - 开启 `verboseConsoleInfo` 配置项，在 console 查看实际发送的内容
 - 如果遇到发送失败，尝试修改文案或移除可疑内容
 - 使用 `--raw` 参数测试原始文本是否能正常发送
+
+### 链接语法说明 ⚠️
+
+QQ 原生 Markdown 对链接的处理有特殊规则：
+
+#### ✅ 安全的方式（不触发白名单检测）
+
+1. **普通文本中的 URL** - 直接写 URL，不会被识别为链接
+   ```markdown
+   访问 www.baidu.com 获取更多信息
+   ```
+
+2. **使用尖括号包裹** - 在某些上下文中会保留尖括号作为普通文本
+   ```markdown
+   <www.baidu.com>
+   ```
+   
+   > 💡 注意：在标题、引用等结构中，`<URL>` 通常会被当作普通文本处理，不会自动转换为可点击的链接。
+   
+   **普通文本中的链接示例：**
+   
+   ![doc/images/normal-text-link-example.png](doc/images/normal-text-link-example.png)
+
+#### ❌ 会触发白名单检测的方式
+
+使用标准 Markdown 链接语法时，QQ 会**强制检测 URL 白名单**：
+
+```markdown
+![百度](https://www.baidu.com)  <!-- 需要域名在白名单中 -->
+```
+
+如果域名不在白名单中，会返回错误：
+```json
+{ 
+  "message": "请求参数不允许包含url www.example.com", 
+  "code": 40034028 
+}
+```
+
+#### 🔧 解决方案
+
+如果需要发送外部链接：
+1. 联系 QQ 开放平台申请域名白名单
+2. 或者只使用普通文本形式展示 URL，让用户手动复制
+3. 使用短链接服务将长域名转为已备案的短域名
 
 

@@ -17,3 +17,9 @@ tsconfig.tsbuildinfo
 *.ntvs*
 *.njsproj
 *.sln
+
+# Python virtual environments
+venv/
+.venv/
+env/
+.env/

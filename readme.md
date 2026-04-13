@@ -212,23 +212,22 @@ QQ 原生 Markdown 对链接的处理有特殊规则：
    访问 www.baidu.com 获取更多信息
    ```
 
+  #####  **普通文本中的链接示例：**
+
+  ![doc/images/normal-text-link-example.png](doc/images/normal-text-link-example.png)
+
 2. **使用尖括号包裹** - 在某些上下文中会保留尖括号作为普通文本
    ```markdown
    <www.baidu.com>
    ```
-   
-   > 💡 注意：在标题、引用等结构中，`<URL>` 通常会被当作普通文本处理，不会自动转换为可点击的链接。
-   
-   **普通文本中的链接示例：**
-   
-   ![doc/images/normal-text-link-example.png](doc/images/normal-text-link-example.png)
+
 
 #### ❌ 会触发白名单检测的方式
 
 使用标准 Markdown 链接语法时，QQ 会**强制检测 URL 白名单**：
 
 ```markdown
-![百度](https://www.baidu.com)  <!-- 需要域名在白名单中 -->
+![Koishi Logo](https://upload.wikimedia.org/wikipedia/commons/f/f3/Koishi.js_Logo.png?_=20230331182243)  <!-- 需要域名在白名单中 -->
 ```
 
 如果域名不在白名单中，会返回错误：

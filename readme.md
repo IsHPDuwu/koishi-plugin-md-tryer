@@ -1,34 +1,31 @@
+![koishi-plugin-md-tryer](https://socialify.git.ci/VincentZyu233/koishi-plugin-md-tryer/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff3%2FKoishi.js_Logo.png%3F_%3D20230331182243&name=1&owner=1&pulls=1&stargazers=1&theme=Auto)
+
 # koishi-plugin-md-tryer
 
 [![npm](https://img.shields.io/npm/v/koishi-plugin-md-tryer?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-md-tryer)
 [![npm-download](https://img.shields.io/npm/dm/koishi-plugin-md-tryer?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-md-tryer)
-[![Koishi Forum](https://img.shields.io/badge/koishi.forum.xyz-5546A3?style=for-the-badge&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff3%2FKoishi.js_Logo.png&logoColor=white)](https://forum.koishi.xyz/t/topic/12432)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/VincentZyu233/koishi-plugin-md-tryer)
+[![Gitee](https://img.shields.io/badge/Gitee-C71D23?style=for-the-badge&logo=gitee&logoColor=white)](https://gitee.com/vincent-zyu/koishi-plugin-md-tryer-vincentzyu-fork)
+[![Koishi Forum](https://img.shields.io/badge/koishi.forum.xyz_topic_12432-5546A3?style=for-the-badge&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Ff%2Ff3%2FKoishi.js_Logo.png&logoColor=white)](https://forum.koishi.xyz/t/topic/12432)
 
-用于测试和调试 QQ 平台原生 Markdown 消息的 Koishi 插件。
+📝 用于测试和调试 QQ 平台原生 Markdown 消息的 Koishi 插件 ✨
 
 ## 功能特性
 
 - 发送原生 Markdown 格式消息
-- 提供 10 个预置的 Markdown 示例
-- 支持发送原始文本模式
-- 支持调试模式，在 console 打印发送的内容
+- 提供 15 个预置的 Markdown 示例
+- 支持使用`--raw`参数发送原始文本模式
+- 支持调试模式，在 console 打印发送的md字符串内容
 
 ## 安装
 
 ```bash
 # 在 Koishi 插件市场搜索 md-tryer 安装
-# 或使用命令行安装
+# 或使用npm命令行安装
+cd /path/to/koishi-app
+npm install koishi-plugin-md-tryer
+# 或者使用yarn
 yarn add koishi-plugin-md-tryer
-```
-
-## 配置
-
-在 Koishi 配置文件中添加：
-
-```yaml
-plugins:
-  md-tryer:
-    verboseConsoleInfo: false  # 是否开启调试模式，打印发送的 Markdown 内容
 ```
 
 ## 使用方法
@@ -36,7 +33,9 @@ plugins:
 ### 发送自定义 Markdown
 
 ```bash
-echo-md # 标题\n**粗体**文本
+echo-md "# 这里是mark内容捏
+## 你好
+> 你好呀"
 ```
 
 ### 发送预置示例
@@ -58,7 +57,7 @@ echo-md -e 2 --raw
 
 ## 预置示例
 
-插件提供了 10 个预置的 Markdown 示例，涵盖各种常用格式：
+插件提供了 16 个预置的 Markdown 示例，涵盖各种常用格式：
 
 | 索引 | 示例名称 | 说明 |
 |------|---------|------|
@@ -72,6 +71,12 @@ echo-md -e 2 --raw
 | 7 | 任务列表示例 | 展示任务列表格式 |
 | 8 | 混合格式示例 | 展示多种格式的组合 |
 | 9 | 高级示例 | 展示数学公式和代码高亮 |
+| 10 | 单图示例(mihoyo原神logo) | 展示图片嵌入和描述 |
+| 11 | 百度简介示例 | 展示图片、链接和列表 |
+| 12 | Google简介示例 | 展示表格和图片嵌入 |
+| 13 | 哔哩哔哩简介示例 | 展示表格、图片和弹幕文化 |
+| 14 | YouTube简介示例 | 展示平台特色和代码示例 |
+| 15 | 原神？？启动！！！ | 展示图片和引用格式 |
 
 ## 示例展示
 
